@@ -5,7 +5,7 @@ import greenSign from '../../assets/greenSign.png'
 import axios from 'axios'
 import {FaTrashAlt} from "react-icons/fa"
 import changeDate from '../../utils/changeDate'
-import {Modal} from '../../component'
+import {Modal, TodoMenu} from '../../component'
 
 
 const MainMenu = () => {
@@ -13,6 +13,7 @@ const MainMenu = () => {
     const [isOpen, setIsOpen] = useState(false)
     const [title, setTitle] = useState('')
     const [isActivity, setIsActivity] = useState(false)
+    const [isOpenTodo, setIsOpenTodo] = useState(false)
     const [id, setId] = useState(0)
     const [isSuccess, setIsSuccess] = useState(false)
     const [createActivityTrigger, setCreateActivityTrigger] = useState(false)
@@ -63,6 +64,19 @@ const MainMenu = () => {
         setId(id)
     }
 
+    const openTodo = (title: any, id: any) => {
+        setIsOpenTodo(true)
+        setIsActivity(false)
+        setTitle(title)
+        setId(id)
+    }
+
+    const closeTodo = () => {
+        setIsOpenTodo(false)
+        setIsActivity(true)
+        setCreateActivityTrigger((createActivityTrigger) => !createActivityTrigger)
+    }
+
     const closeIsOpen = () => {
         setIsOpen(false)
     }
@@ -81,7 +95,7 @@ const MainMenu = () => {
 
         ).then((res) => {
             let data =res.data.data
-            data.reverse()
+            // data.reverse()
             if (data.length < 5) {
                 let app = document.getElementById('appTodo')
                 if (app) {
@@ -100,7 +114,15 @@ const MainMenu = () => {
 
     return (
         <div className='MainContainer'>
-            <div className='MainSecondContainer'>
+            <TodoMenu isOpenTodo={isOpenTodo} id={id} title={title} closeTodo={closeTodo}/>
+            <div className='MainSecondContainer'
+                 style={
+                    !isOpenTodo?
+                    {display: 'block'}
+                    :
+                    {display: 'none'}
+                }
+            >
                 <div className='titleButtonCon'>
                     <h1 className='titleActivity'>Activity</h1>
                     <button 
@@ -117,9 +139,16 @@ const MainMenu = () => {
                         {
                             data.map((el: any) => {
                                 return ( 
-                                <div className='cardActivity'>
-                                    <div className='cardActSecCon'>
-                                        <h3>{el.title}</h3>
+                                <div className='cardActivity' key={el.id + el.title}>
+                                    <div 
+                                    className='cardActSecCon'>
+                                        <div 
+                                            className='clickBox'
+                                            onClick={() => openTodo(el.title, el.id)}
+                                        >
+                                            <h3 >{el.title}</h3>
+
+                                        </div>
                                         <div className='footerCardAct'>
                                             <p>{changeDate(el.created_at)}</p>
                                             <FaTrashAlt 

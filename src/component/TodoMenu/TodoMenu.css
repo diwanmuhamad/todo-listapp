@@ -1,0 +1,98 @@
+.todoMainCon {
+    width: 72%;
+    margin: auto;
+    height: 100%;
+}
+
+.todoButtonCon {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.titleTodo {
+    display: flex;
+    gap: 36px;
+}
+
+.buttonAddTodo {
+    color: white;
+    background: #16ABF8;
+    border-radius: 45px;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 21px 13px 14px;
+    gap: 6px;
+    width: 159px;
+    height: 54px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+} 
+
+.titleTodo > p {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    /* line-height: 54px; */
+    /* identical to box height */
+    margin-top: -10px;
+
+    color: #111111;
+}
+
+.imgTodoCon {
+    width: 70%;
+    margin: auto;
+    /* border: 2px solid black; */
+    padding-top: 36px;
+    padding-bottom: 26px;
+}
+
+.imgTodoCon > img {
+    object-fit: contain;
+    width: 100%;
+}
+
+.todoListCon {
+
+}
+
+.todoList {
+
+}
+
+.todoSecCon {
+
+}
+
+.sortButtonCon {
+    display: flex;
+    gap: 15px
+}
+
+.clickBox {
+    /* border: 2px solid black; */
+    cursor: pointer;
+    height: 170px;
+}
+
+#titleValue {
+    all: unset;
+    width: 232px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    /* line-height: 54px; */
+    /* identical to box height */
+    margin-top: -14px;
+
+    color: #111111;
+}
