@@ -1,0 +1,102 @@
+.modals {
+    display: none;
+    position: absolute;
+    width: 490px;
+    height: 355px;
+    top: 50%;
+    left: 50%;
+    float: left;
+    transform: translate(-50%, -50%);
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    z-index: 1;
+    padding: 50px;
+}
+
+.modalSecCon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.btnModalCon {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.btnBatalModal {
+    width: 150px;
+    height: 54px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 14px;
+    gap: 6px;
+    background: #F4F4F4;
+    border-radius: 45px;
+    border: none;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    /* identical to box height */
+
+    cursor: pointer;
+    color: #4A4A4A;
+}
+
+.btnDeleteModal {
+    width: 150px;
+    height: 54px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 14px;
+    gap: 6px;
+    background: #ED4C5C;;
+    border-radius: 45px;
+    border: none;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    /* identical to box height */
+    cursor: pointer;
+
+    color: white;
+}
+
+.titleModal {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    /* or 27px */
+
+    text-align: center;
+
+    color: #111111;
+}
+
+.titleItem {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 150%;
+    /* or 27px */
+
+    text-align: center;
+
+    color: #111111;
+}

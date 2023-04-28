@@ -6,7 +6,7 @@ function App() {
   
   return (
     <>
-      <div className='app'>
+      <div className='app' id="appTodo">
         <Navbar title="TO DO LIST APP" />
         <MainMenu/>
       </div>
